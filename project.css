@@ -1,0 +1,115 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Quicksand", sans-serif;
+  background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden; }
+
+header {
+  margin-top: 2rem;
+  color: white;
+  text-shadow: 0 2px 8px #7873f5;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.1em;
+  animation: headerPop 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55); }
+
+@keyframes headerPop {
+  0% {
+    transform: scale(0.7);
+    opacity: 0; }
+  80% {
+    transform: scale(1.1);
+    opacity: 1; }
+  100% {
+    transform: scale(1); } }
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; }
+
+#weather-info {
+  margin: 3rem 0;
+  padding: 2.5rem 3rem;
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  animation: glassFadeIn 1.5s ease; }
+
+@keyframes glassFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+#weather-info h2 {
+  color: #ff6ec4;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.05em; }
+
+#temperature, #conditions {
+  margin: 1.2rem 0;
+  font-size: 1.5rem;
+  color: #7873f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  animation: popIn 1s cubic-bezier(0.68, -0.55, 0.27, 1.55); }
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0; }
+  80% {
+    transform: scale(1.05);
+    opacity: 1; }
+  100% {
+    transform: scale(1); } }
+.label {
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 1px 4px #ff6ec4; }
+
+.value {
+  font-size: 2rem;
+  color: #7873f5;
+  font-family: "Montserrat", sans-serif;
+  animation: valuePulse 2s infinite; }
+
+@keyframes valuePulse {
+  0%, 100% {
+    color: #7873f5; }
+  50% {
+    color: #ff6ec4; } }
+footer {
+  margin-bottom: 2rem;
+  color: white;
+  font-size: 1.1rem;
+  text-shadow: 0 1px 4px #ff6ec4;
+  font-family: "Quicksand", sans-serif;
+  letter-spacing: 0.05em;
+  opacity: 0.85; }
+
+@media (max-width: 600px) {
+  #weather-info {
+    padding: 1.2rem 0.5rem;
+    border-radius: 1rem; }
+
+  header {
+    font-size: 1.5rem; } }
+
+/*# sourceMappingURL=project.css.map */

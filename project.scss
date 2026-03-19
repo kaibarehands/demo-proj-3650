@@ -1,0 +1,129 @@
+
+// Ridiculously Fancy Weather App Styles
+
+$primary-gradient: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+$glass-bg: rgba(255, 255, 255, 0.25);
+$glass-blur: 10px;
+$card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+$accent: #ff6ec4;
+$accent2: #7873f5;
+$header-font: 'Montserrat', sans-serif;
+$body-font: 'Quicksand', sans-serif;
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	font-family: $body-font;
+	background: $primary-gradient;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	overflow-x: hidden;
+}
+
+header {
+	margin-top: 2rem;
+	color: white;
+	text-shadow: 0 2px 8px $accent2;
+	font-family: $header-font;
+	font-size: 2.5rem;
+	letter-spacing: 0.1em;
+	animation: headerPop 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@keyframes headerPop {
+	0% { transform: scale(0.7); opacity: 0; }
+	80% { transform: scale(1.1); opacity: 1; }
+	100% { transform: scale(1); }
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
+#weather-info {
+	margin: 3rem 0;
+	padding: 2.5rem 3rem;
+	border-radius: 2rem;
+	background: $glass-bg;
+	backdrop-filter: blur($glass-blur);
+	box-shadow: $card-shadow;
+	border: 1.5px solid rgba(255,255,255,0.18);
+	max-width: 400px;
+	width: 90%;
+	text-align: center;
+	animation: glassFadeIn 1.5s ease;
+}
+
+@keyframes glassFadeIn {
+	0% { opacity: 0; transform: translateY(40px); }
+	100% { opacity: 1; transform: translateY(0); }
+}
+
+#weather-info h2 {
+	color: $accent;
+	font-size: 2rem;
+	margin-bottom: 1.5rem;
+	font-family: $header-font;
+	letter-spacing: 0.05em;
+}
+
+#temperature, #conditions {
+	margin: 1.2rem 0;
+	font-size: 1.5rem;
+	color: $accent2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+	animation: popIn 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@keyframes popIn {
+	0% { transform: scale(0.8); opacity: 0; }
+	80% { transform: scale(1.05); opacity: 1; }
+	100% { transform: scale(1); }
+}
+
+.label {
+	font-weight: bold;
+	color: white;
+	text-shadow: 0 1px 4px $accent;
+}
+
+.value {
+	font-size: 2rem;
+	color: $accent2;
+	font-family: $header-font;
+	animation: valuePulse 2s infinite;
+}
+
+@keyframes valuePulse {
+	0%, 100% { color: $accent2; }
+	50% { color: $accent; }
+}
+
+footer {
+	margin-bottom: 2rem;
+	color: white;
+	font-size: 1.1rem;
+	text-shadow: 0 1px 4px $accent;
+	font-family: $body-font;
+	letter-spacing: 0.05em;
+	opacity: 0.85;
+}
+
+// Responsive tweaks
+@media (max-width: 600px) {
+	#weather-info {
+		padding: 1.2rem 0.5rem;
+		border-radius: 1rem;
+	}
+	header {
+		font-size: 1.5rem;
+	}
+}
